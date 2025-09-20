@@ -28,7 +28,6 @@ const HeroSection = () => {
 
       <div className="container mx-auto px-6 py-6 md:py-12 lg:py-20 relative z-10 max-w-7xl">
         <div className="grid lg:grid-cols-12 gap-16 items-center">
-
           <div className="lg:col-span-6 text-center lg:text-left hidden lg:block">
             <h1 className="text-5xl lg:text-7xl font-light text-slate-900 mb-8 leading-tight tracking-tight">
               <span className="bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent font-medium">
@@ -44,18 +43,20 @@ const HeroSection = () => {
               </span>
             </h1>
 
-            <button
+            <a
+              href="https://boropl.etsy.com/listing/1844578572"
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={handleBuyClick}
               className="inline-flex items-center px-10 py-5 bg-gradient-to-r from-emerald-500 to-teal-600 
-                         hover:from-emerald-600 hover:to-teal-700 text-white font-medium text-lg rounded-2xl 
-                         transform hover:scale-105 transition-all duration-300 shadow-xl 
-                         hover:shadow-emerald-500/25 cursor-pointer"
+             hover:from-emerald-600 hover:to-teal-700 text-white font-medium text-lg rounded-2xl 
+             transform hover:scale-105 transition-all duration-300 shadow-xl 
+             hover:shadow-emerald-500/25 cursor-pointer"
             >
               <Gift className="mr-3" size={20} />
               {t("buyOnEtsy")}
-            </button>
+            </a>
           </div>
-
 
           <div className="lg:col-span-6 relative">
             <div className="relative group">
@@ -64,7 +65,6 @@ const HeroSection = () => {
                 <img
                   src="/images/class1.jpg"
                   alt="CLAAS Getränkespender"
-
                   className="w-full h-auto rounded-2xl"
                 />
 
@@ -75,11 +75,8 @@ const HeroSection = () => {
                 >
                   {t("new")}
                 </div>
-
-
               </div>
             </div>
-
 
             <div className="lg:hidden mt-5 text-center">
               <h1 className="text-3xl sm:text-4xl font-light text-slate-900 mb-4 leading-tight tracking-tight">
@@ -96,16 +93,19 @@ const HeroSection = () => {
                 </span>
               </h1>
 
-              <button
+              <a
+                href="https://boropl.etsy.com/listing/1844578572"
+                target="_blank"
+                rel="noopener noreferrer"
                 onClick={handleBuyClick}
-                className="mt-2 inline-flex items-center px-8 py-4 bg-gradient-to-r from-emerald-500 to-teal-600 
-                           hover:from-emerald-600 hover:to-teal-700 text-white font-medium text-base rounded-2xl 
-                           transform hover:scale-105 transition-all duration-300 shadow-xl 
-                           hover:shadow-emerald-500/25 cursor-pointer"
+                className="inline-flex items-center px-10 py-5 bg-gradient-to-r from-emerald-500 to-teal-600 
+             hover:from-emerald-600 hover:to-teal-700 text-white font-medium text-lg rounded-2xl 
+             transform hover:scale-105 transition-all duration-300 shadow-xl 
+             hover:shadow-emerald-500/25 cursor-pointer"
               >
-                <Gift className="mr-2" size={18} />
+                <Gift className="mr-3" size={20} />
                 {t("buyOnEtsy")}
-              </button>
+              </a>
             </div>
           </div>
         </div>
