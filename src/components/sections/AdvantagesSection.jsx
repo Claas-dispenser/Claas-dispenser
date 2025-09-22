@@ -48,7 +48,6 @@ const AdvantagesSection = () => {
           <div className="w-16 h-0.5 bg-gradient-to-r from-emerald-500 to-teal-500 mx-auto" />
         </div>
 
-        {/* ===== Мобилка: один общий компактный блок ===== */}
         <div className="md:hidden">
           <div className="bg-white rounded-3xl border border-slate-100 overflow-hidden">
             <ul className="divide-y divide-slate-100">
@@ -78,7 +77,6 @@ const AdvantagesSection = () => {
           </div>
         </div>
 
-        {/* ===== Десктоп/планшет: прежняя сетка карточек ===== */}
         <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {advantages.map((advantage, index) => (
             <div key={index} className="group h-full">

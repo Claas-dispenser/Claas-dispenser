@@ -9,20 +9,23 @@ const Reveal = ({ children, delay = 0 }) => {
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
+    const tidRef = { id: null };
     const io = new IntersectionObserver(
       (entries) => {
         entries.forEach((e) => {
           if (e.isIntersecting) {
-            const tid = setTimeout(() => setVisible(true), delay);
+            tidRef.id = setTimeout(() => setVisible(true), delay);
             io.unobserve(el);
-            return () => clearTimeout(tid);
           }
         });
       },
       { threshold: 0.15 }
     );
     io.observe(el);
-    return () => io.disconnect();
+    return () => {
+      io.disconnect();
+      if (tidRef.id) clearTimeout(tidRef.id);
+    };
   }, [delay]);
 
   return (
@@ -85,12 +88,7 @@ const ProductSection = () => {
                   {section.title}
                 </h3>
 
-                {index !== 0 && (
-                  <p className="text-slate-600 text-lg leading-relaxed mb-8 font-light">
-                    {section.description}
-                  </p>
-                )}
-
+                {/* для блока 0 — список с описанием и designExtra */}
                 {index === 0 && (
                   <ul className="space-y-6">
                     {[section.description, t("designExtra")]
@@ -108,6 +106,7 @@ const ProductSection = () => {
                   </ul>
                 )}
 
+                {/* для блока 1 — один раз описание + usageList */}
                 {index === 1 && Array.isArray(t("usageList")) && (
                   <>
                     <p className="text-slate-600 text-lg leading-relaxed mb-8 font-light">
@@ -128,6 +127,7 @@ const ProductSection = () => {
                   </>
                 )}
 
+                {/* для блока 2 — один раз описание + featuresList */}
                 {index === 2 && Array.isArray(t("featuresList")) && (
                   <>
                     <p className="text-slate-600 text-lg leading-relaxed mb-8 font-light">
@@ -156,7 +156,7 @@ const ProductSection = () => {
               >
                 <Reveal delay={index * 120}>
                   <div className="relative group">
-                    <div className="absolute -inset-4 bg-gradient-to-r from-emerald-600/10 to-teal-600/10 rounded-3xl opacity-0 group-hover:opacity-100 transition-all duration-500 blur-xl"></div>
+                    <div className="absolute -inset-4 bg-gradient-to-r from-emerald-600/10 to-teal-600/10 rounded-3xl opacity-0 group-hover:opacity-100 transition-all duration-500 blur-xl" />
                     <div className="relative bg-white rounded-2xl p-2 shadow-lg border border-slate-100 group-hover:shadow-xl transition-all duration-500">
                       <img
                         src={section.image}

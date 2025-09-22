@@ -13,6 +13,7 @@ import Footer from "./components/sections/Footer";
 import { useEffect, useState } from "react";
 import Header from "./components/sections/Header";
 import EngravingSection from "./components/sections/EngravingSection";
+import SwitcherSection from "./components/sections/Switch";
 
 const App = () => {
   const [language, setLanguage] = useState("de");
@@ -35,6 +36,7 @@ const App = () => {
         <VideoSection />
         <AdvantagesSection />
         <ProductSection />
+        <SwitcherSection />
         <ReviewsSection />
         <EngravingSection />
         <CTASection />

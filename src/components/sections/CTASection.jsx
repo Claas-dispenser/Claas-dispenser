@@ -11,16 +11,18 @@ const CTASection = () => {
   const handleOrder = () => {
     trackEvent("InitiateCheckout", {
       content_name: `CLAAS Dispenser ${selectedPortions} portions`,
+      content_type: "product",
+      num_items: 1,
       value: 199,
       currency: "EUR",
-      num_items: 1,
+      portions: selectedPortions,
+      contents: [{ id: "claas-dispenser", quantity: 1 }],
     });
     window.open(buildEtsyUrl(selectedPortions), "_blank");
   };
 
   return (
     <section className="relative overflow-hidden py-6 md:py-14 lg:py-24">
-
       <img
         src="/images/class1.jpg"
         alt=""
@@ -28,12 +30,10 @@ const CTASection = () => {
         className="absolute inset-0 z-0 w-full h-full object-cover"
       />
 
-
       <div
         aria-hidden="true"
         className="absolute inset-0 z-10 bg-gradient-to-b from-white/95 via-white/90 to-white/95"
       />
-
 
       <div className="relative z-20 container mx-auto px-6 max-w-4xl">
         <div className="text-center">
