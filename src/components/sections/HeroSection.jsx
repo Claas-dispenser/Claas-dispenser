@@ -109,9 +109,9 @@ const HeroSection = () => {
                   {t("heroTagline")}
                 </p>
 
-                <div className="mt-4 inline-flex items-center gap-3 rounded-2xl bg-white/90 backdrop-blur-sm border border-slate-200 px-4 py-2 shadow-sm">
-                  <span className="w-2 h-2 bg-emerald-500 rounded-full" />
-                  <span className="text-sm sm:text-base text-slate-700 font-medium tracking-wide">
+                <div className="mt-4 inline-flex items-center gap-2 rounded-xl bg-white/80 backdrop-blur-sm border border-slate-200 px-3 py-1.5 shadow-sm lg:hidden">
+                  <span className="w-1.5 h-1.5 bg-emerald-500 rounded-full" />
+                  <span className="text-slate-700 font-light text-sm tracking-wide">
                     {t("heroBullets")}
                   </span>
                 </div>
